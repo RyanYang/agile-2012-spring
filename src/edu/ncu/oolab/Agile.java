@@ -1,32 +1,6 @@
 package edu.ncu.oolab;
 
-import java.util.Scanner;
-
 public class Agile {
-
-	public static void showFinishMsg() {
-		;
-	}
-
-	public static void showWelcomeMsg() {
-		;
-	}
-
-	public static void showCommandPrompt() {
-		;
-	}
-
-	public static void showGrade() {
-		;
-	}
-
-	public static void showRank() {
-		;
-	}
-
-	public static Boolean isID(String token) {
-		return false;
-	}
 
 	/**
 	 * @param args
@@ -57,31 +31,8 @@ public class Agile {
 		//     show "ID `user input` is wrong!"
 		//     go to [1]
 		// end if
-		Scanner cin = new Scanner(System.in);
-		System.out.println("Type ID or Q (quit program)?");
-		String line = cin.nextLine();
-		if (line.equals("Q")) {
-			showFinishMsg();
-			System.exit(0);
-		} else if (isID(line)) {
-			showWelcomeMsg();
-			while (true) {
-				showCommandPrompt();
-				line = cin.nextLine();
-				if (line.equals("Q")) {
-					showFinishMsg();
-					System.exit(0);
-				} else if (line.equals("G")) {
-					showGrade();
-				} else if (line.equals("R")) {
-					showRank();
-				} else if (line.equals("W")) {
-					;
-				} else {
-					;
-				}
-			}
-		}
+		CommandLineInterface cli = new CommandLineInterface();
+		cli.execute();
 	}
 
 }
