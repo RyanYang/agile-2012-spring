@@ -30,11 +30,11 @@ public class CommandLineInterface {
 	
 	private void promptCommand() throws NoSuchCommandException {
 		while (true) {
-			System.out.println("Commands:");
-			System.out.println("1) G (Grade)");
-			System.out.println("2) R (Rank)");
-			System.out.println("3) W (Weight)");
-			System.out.println("4) Q (Quit)");
+			System.out.println("輸入指令:");
+			System.out.println("	1) G 顯示成績(Grade)");
+			System.out.println("	2) R 班上排名(Rank)");
+			System.out.println("	3) W 設定配分(Weight)");
+			System.out.println("	4) Q 結束使用(Quit)");
 			String line = this.cin_.nextLine();
 			if (line.equals("Q")) {
 				break;
@@ -51,7 +51,7 @@ public class CommandLineInterface {
 	}
 	
 	private void promptID() throws NoSuchIDException {
-		System.out.println("Type ID or Q (quit program)?");
+		System.out.println("輸入 ID 或 Q (結束使用)?");
 		String line = this.cin_.nextLine();
 		if (line.equals("Q")) {
 			this.showFinishMsg();
@@ -79,16 +79,21 @@ public class CommandLineInterface {
 	
 	private void showOldWeights() {
 		Double[] weights = this.gs_.getWeights();
-		System.out.println("Old weight:");
-		System.out.printf("Lab1\t%.0f", weights[0] * 100.0);
+		System.out.println("舊配分:");
+		System.out.printf("Lab1\t%.0f ", weights[0] * 100.0);
+		System.out.println();
 		System.out.printf("Lab2\t%.0f", weights[1] * 100.0);
+		System.out.println();
 		System.out.printf("Lab3\t%.0f", weights[2] * 100.0);
+		System.out.println();
 		System.out.printf("Mid Term Exam\t%.0f", weights[3] * 100.0);
+		System.out.println();
 		System.out.printf("Final Exam\t%.0f", weights[4] * 100.0);
+		System.out.println();
 	}
 	
 	private Double[] getNewWeights() {
-		System.out.println("Enter new weight:");
+		System.out.println("輸入新配分:");
 		Double[] weights = new Double[5];
 		System.out.printf("Lab1:");
 		weights[0] = this.cin_.nextDouble() / 100.0;
