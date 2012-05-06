@@ -8,6 +8,9 @@ public class CommandLineInterface {
 	GradeSystem gs_;
 	
 	public CommandLineInterface() {
+		/**
+		 *  This is a CommandLineInterface constructor.
+		 */
 		this.cin_ = new Scanner(System.in);
 		this.gs_ = new GradeSystem();
 	}
@@ -44,6 +47,8 @@ public class CommandLineInterface {
 				this.gs_.showRank();
 			} else if (line.equals("W")) {
 				this.updateWeights();
+			} else if (line.equals("")) {
+				// do nothing
 			} else {
 				throw new NoSuchCommandException();
 			}
