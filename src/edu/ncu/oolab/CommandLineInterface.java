@@ -37,7 +37,6 @@ public class CommandLineInterface {
 			System.out.println("4) Q (Quit)");
 			String line = this.cin_.nextLine();
 			if (line.equals("Q")) {
-				this.showFinishMsg();
 				break;
 			} else if (line.equals("G")) {
 				this.gs_.showGrade();
