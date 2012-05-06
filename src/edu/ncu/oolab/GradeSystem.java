@@ -78,6 +78,9 @@ public class GradeSystem {
 		Scanner fin = new Scanner(f, "UTF-8");
 		while (fin.hasNextLine()) {
 			String line = fin.nextLine();
+			if (line.isEmpty()) {
+				break;
+			}
 			this.grades_.add(new Grade(line));
 		}
 		fin.close();
